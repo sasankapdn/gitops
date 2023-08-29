@@ -46,6 +46,7 @@ jobs:
           echo "KUBECONFIG=/tmp/.kube/config" >> $GITHUB_ENV
           oci setup repair-file-permissions --file /home/runner/.oci/config
           oci setup repair-file-permissions --file /home/runner/.oci/key.pem
+          export KUBECONFIG=/tmp/.kube/config
       - name: 'Currently running services'
         run: kubectl -n free-ns get pods
       - name: Login to Docker registry
